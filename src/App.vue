@@ -1,7 +1,7 @@
 <script setup>
-async function submit() {
+async function submit(data) {
   await new Promise(r => setTimeout(r, 1000))
-  alert('Submitted! 🎉')
+  alert(`Submitted! 🎉 ${JSON.stringify(data, null, 2)}`)
 }
 </script>
 
@@ -15,7 +15,11 @@ async function submit() {
       class="logo"
     >
 
-    <FormKit type="text" name="Name" label="Name" help="Your name goes here" />
+    <FormKit type="form" @submit="submit">
+      <FormKit type="text" name="Name" label="Your name" help="Your name goes here" validation="required" />
+      <FormKit type="email" name="Email" label="Email" help="Your email goes here" validation="required|email"/>
+      <FormKit type="textarea" name="Message" label="Message" help="Your message goes here" validation="required" />
+    </FormKit>
   </div>
 </template>
 
