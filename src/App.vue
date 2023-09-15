@@ -1,5 +1,5 @@
-<script setup>
-async function submit(data) {
+<script setup lang="ts">
+async function submit(data: Record<string, any>) {
   await new Promise(r => setTimeout(r, 1000))
   alert(`Submitted! 🎉 ${JSON.stringify(data, null, 2)}`)
 }
