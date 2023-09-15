@@ -1,8 +1,4 @@
 <script setup lang="ts">
-async function submit() {
-  await new Promise(r => setTimeout(r, 1000))
-  alert('Submitted! 🎉')
-}
 </script>
 
 <template>
