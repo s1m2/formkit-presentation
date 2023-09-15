@@ -15,7 +15,14 @@ async function submit() {
       class="logo"
     >
 
-    <FormKit type="text" name="Name" label="Name" help="Your name goes here" />
+    <FormKit
+      type="text" 
+      name="Name" 
+      label="Name" 
+      help="Your name goes here"
+      validation="required"
+      validation-visibility="blur"
+    />
   </div>
 </template>
 
